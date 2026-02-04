@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | FreshMart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Fresh<span>Mart</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero shop-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Our Products</h1>
+        <p>Explore our fresh groceries and add them to your cart easily.</p>
+    </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products" id="products">
+    <h2>All Products</h2>
+    <div class="product-grid" id="productGrid">
+        <!-- Products will be injected dynamically via JS -->
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>FreshMart</h3>
+            <p>Delivering fresh groceries to your home since 2026.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@freshmart.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </div>
+    <p class="footer-bottom">© 2026 FreshMart. All Rights Reserved.</p>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+// Update cart count dynamically
+const cartCount = document.getElementById("cartCount");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+cartCount.innerText = cart.length;
+
+// Render products dynamically (same as homepage)
+const productGrid = document.getElementById("productGrid");
+function renderProducts() {
+    productGrid.innerHTML = "";
+    products.forEach(product => {
+        productGrid.innerHTML += `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>$${product.price}</p>
+                <button onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>
+        `;
+    });
+}
+
+// Initialize
+renderProducts();
+</script>
+
+</body>
+</html>

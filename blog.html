@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | FreshMart</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.blog-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.blog-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.blog-card {
+    flex: 1 1 300px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.blog-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.blog-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.blog-card button {
+    margin-top: auto;
+    padding: 8px 12px;
+    border: none;
+    background: #27ae60;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Fresh<span>Mart</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<!-- BLOG SECTION -->
+<section class="blog-container">
+    <h2>Our Blog</h2>
+    <div class="blog-grid" id="blogGrid">
+        <!-- Blog posts rendered dynamically -->
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>FreshMart</h3>
+            <p>Delivering fresh groceries to your home since 2026.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@freshmart.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </div>
+    <p class="footer-bottom">© 2026 FreshMart. All Rights Reserved.</p>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+// Dummy blog posts
+const blogs = [
+    {
+        title: "5 Tips for Storing Fresh Fruits",
+        image: "assets/fruits.avif",
+        desc: "Learn how to keep your fruits fresh longer with these easy storage tips."
+    },
+    {
+        title: "Why Organic Milk is Better",
+        image: "assets/organic milk.jpg",
+        desc: "Discover the benefits of switching to organic milk for your family."
+    },
+    {
+        title: "Healthy Breakfast Ideas",
+        image: "assets/breakfast.jfif",
+        desc: "Quick and nutritious breakfast recipes to start your day right."
+    }
+];
+
+// Render blog posts
+const blogGrid = document.getElementById("blogGrid");
+blogs.forEach(blog => {
+    blogGrid.innerHTML += `
+        <div class="blog-card">
+            <img src="${blog.image}" alt="${blog.title}">
+            <div class="blog-card-content">
+                <h3>${blog.title}</h3>
+                <p>${blog.desc}</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    `;
+});
+
+// Update cart count
+updateCartCount();
+</script>
+
+</body>
+</html>

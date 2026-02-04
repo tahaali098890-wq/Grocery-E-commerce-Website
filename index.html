@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshMart | Online Grocery Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Fresh<span>Mart</span></div>
+    <nav>
+    <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Fresh Groceries, Delivered Fast</h1>
+        <p>Daily fresh fruits, vegetables, dairy & essentials delivered to your doorstep.</p>
+        <button onclick="scrollToSection('products')">Shop Now</button>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+        <div class="category-card">🥦 Vegetables</div>
+        <div class="category-card">🍎 Fruits</div>
+        <div class="category-card">🥛 Dairy</div>
+        <div class="category-card">🍞 Bakery</div>
+        <div class="category-card">🥫 Pantry</div>
+        <div class="category-card">🥤 Beverages</div>
+    </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products" id="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid" id="productGrid">
+        <!-- Products will be added dynamically via JS -->
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+    <h2>Why Choose FreshMart?</h2>
+    <div class="features">
+        <div class="feature-card">
+            <span>🚚</span>
+            <h3>Fast Delivery</h3>
+            <p>Get your groceries delivered within 24 hours.</p>
+        </div>
+        <div class="feature-card">
+            <span>🥬</span>
+            <h3>Fresh Products</h3>
+            <p>Handpicked, high-quality fruits and vegetables.</p>
+        </div>
+        <div class="feature-card">
+            <span>💰</span>
+            <h3>Best Prices</h3>
+            <p>Affordable groceries without compromising quality.</p>
+        </div>
+        <div class="feature-card">
+            <span>🔒</span>
+            <h3>Secure Payment</h3>
+            <p>Safe and multiple payment options for convenience.</p>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h2>Subscribe for Offers</h2>
+    <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>FreshMart</h3>
+            <p>Delivering fresh groceries to your home since 2026.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@freshmart.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </div>
+    <p class="footer-bottom">© 2026 FreshMart. All Rights Reserved.</p>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
